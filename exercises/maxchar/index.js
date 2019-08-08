@@ -17,7 +17,7 @@ function maxChar(str) {
     let max = 0;
     let maxChar = '';
     for (let key in chars) {
-        if (chars[key] >= max) {
+        if (chars[key] > max) {
             max = chars[key];
             maxChar = key;
         }

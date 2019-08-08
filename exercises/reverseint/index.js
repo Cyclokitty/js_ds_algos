@@ -18,9 +18,7 @@ function numberToString(number) {
 }
 
 function reverseInt(n) {
-    if (n === 0) return 0;
-
-    if (n > 0) {
+    if (n >= 0) {
         return Number(reverseString(numberToString(n)));
     }
     

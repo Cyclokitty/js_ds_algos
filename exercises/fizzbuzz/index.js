@@ -12,18 +12,33 @@
 //   4
 //   buzz
 
+// recursion version
 function fizzBuzz(n) {
-    for (let i = 1; i <= n; i++) {
-        if (i % 3 === 0 && i % 5 === 0) {
-            console.log('fizzbuzz');
-        } else if (i % 5 === 0) {
-            console.log('buzz');
-        } else if ( i % 3 === 0) {
-            console.log('fizz');
-        } else {
-            console.log(i);
-        }
-    }
+    if (n === 0) return;
+
+    fizzBuzz(n - 1);
+
+    let str = '';
+
+    if (! (n % 3)) str += 'fizz';
+    if (! (n % 5)) str += 'buzz';
+
+    console.log( str || n);
 }
+
+
+// function fizzBuzz(n) {
+//     for (let i = 1; i <= n; i++) {
+//         if (i % 3 === 0 && i % 5 === 0) {
+//             console.log('fizzbuzz');
+//         } else if (i % 5 === 0) {
+//             console.log('buzz');
+//         } else if ( i % 3 === 0) {
+//             console.log('fizz');
+//         } else {
+//             console.log(i);
+//         }
+//     }
+// }
 
 module.exports = fizzBuzz;

@@ -13,6 +13,7 @@
 //   buzz
 
 // recursion version
+// total overkill
 function fizzBuzz(n) {
     if (n === 0) return;
 

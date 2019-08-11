@@ -8,41 +8,51 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-// helper function
-function mapChars(str) {
-    let chars = {};
-    str = str.split('');
-
-    for (let char of str) {
-        typeof chars[char] === 'undefined' ? chars[char] = 1 : chars[char]++;
-    }
-    return chars;
-}
+// OMG AND EVEN EASIER WAY!
 
 function stripNonAlphanumeric(str) {
-    return str.match(/\w/g).join('').toLowerCase();
-}
-
-function sortObjectKeys(obj) {
-    return Object.keys(obj)
-        .sort()
-        .reduce((acc, key) => {
-            acc[key] = obj[key];
-            return acc;
-        }, {})
+    return str.match(/\w/g).join('').toLowerCase().split('').sort().join('') ;
 }
 
 function anagrams(stringA, stringB) {
-    let strA = stripNonAlphanumeric(stringA);
-    let strB = stripNonAlphanumeric(stringB);
-
-    strA = mapChars(strA);
-    strB = mapChars(strB);
-
-    strA = sortObjectKeys(strA);
-    strB = sortObjectKeys(strB);
-
-    return (JSON.stringify(strA) === JSON.stringify(strB)) ?  true :  false;
+    return stripNonAlphanumeric(stringA) === stripNonAlphanumeric(stringB) ? true : false;
 }
+
+// helper function
+// function mapChars(str) {
+//     let chars = {};
+//     str = str.split('');
+
+//     for (let char of str) {
+//         typeof chars[char] === 'undefined' ? chars[char] = 1 : chars[char]++;
+//     }
+//     return chars;
+// }
+
+// function stripNonAlphanumeric(str) {
+//     return str.match(/\w/g).join('').toLowerCase();
+// }
+
+// function sortObjectKeys(obj) {
+//     return Object.keys(obj)
+//         .sort()
+//         .reduce((acc, key) => {
+//             acc[key] = obj[key];
+//             return acc;
+//         }, {})
+// }
+
+// function anagrams(stringA, stringB) {
+//     let strA = stripNonAlphanumeric(stringA);
+//     let strB = stripNonAlphanumeric(stringB);
+
+//     strA = mapChars(strA);
+//     strB = mapChars(strB);
+
+//     strA = sortObjectKeys(strA);
+//     strB = sortObjectKeys(strB);
+
+//     return (JSON.stringify(strA) === JSON.stringify(strB)) ?  true :  false;
+// }
 
 module.exports = anagrams;

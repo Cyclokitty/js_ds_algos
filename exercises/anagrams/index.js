@@ -33,8 +33,8 @@ function sortObjectKeys(obj) {
 }
 
 function anagrams(stringA, stringB) {
-    strA = stripNonAlphanumeric(stringA);
-    strB = stripNonAlphanumeric(stringB);
+    let strA = stripNonAlphanumeric(stringA);
+    let strB = stripNonAlphanumeric(stringB);
 
     strA = mapChars(strA);
     strB = mapChars(strB);

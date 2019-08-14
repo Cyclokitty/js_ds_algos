@@ -18,21 +18,28 @@
 //       '####'
 
 
-// my solution
+// recursion version
 function steps(n) {
-    let stepper = 1;
+    if (n === 0) return;
 
-    if (n < 0) return '';
     
-    while (stepper <= n) {    
-        if (stepper === n) {
-            console.log('#'.repeat(stepper));
-        } else {
-            console.log('#'.repeat(stepper) + ' '.repeat(n - stepper));
-        }
-        stepper++;
-    }  
 }
+
+// my solution
+// function steps(n) {
+//     let stepper = 1;
+
+//     if (n < 0) return '';
+    
+//     while (stepper <= n) {    
+//         if (stepper === n) {
+//             console.log('#'.repeat(stepper));
+//         } else {
+//             console.log('#'.repeat(stepper) + ' '.repeat(n - stepper));
+//         }
+//         stepper++;
+//     }  
+// }
 
 // function steps(n) {
 //     // from 0 to n(iterate thru rows)

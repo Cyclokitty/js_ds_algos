@@ -8,20 +8,39 @@
 // Example:
 //   fib(4) === 3
 
-// my recursion version 
-function fib(n, fibo = [0, 1], counter = 0) {
-    if (n === 0) return;
-    fibo.push(fibo[counter] + fibo[counter + 1]);
-    counter++;
-    fib(n - 1, fibo, counter); 
-    return fibo[n];
-}
+
 
 // Stephen's recursion version
-// function fib(n) {
-//     if (n < 2) return n;
+// slow fib version
+function slowFib(n) {
+    if (n < 2) return n;
 
-//     return fib(n - 1) + fib(n - 2);
+    return fib(n - 1) + fib(n - 2);
+}
+
+// memoizer function
+function memoize(fn) {
+    const cache = {};
+    return function(...args) {
+        if (cache[args]) {
+            return cache[args];
+        }
+
+        const result = fn.apply(this, args);
+        cache[args] = result;
+        return result;
+    };
+}
+
+const fib = memoize(slowFib);
+
+// my recursion version 
+// function fib(n, fibo = [0, 1], counter = 0) {
+//     if (n === 0) return;
+//     fibo.push(fibo[counter] + fibo[counter + 1]);
+//     counter++;
+//     fib(n - 1, fibo, counter); 
+//     return fibo[n];
 // }
 
 // my iterative solution

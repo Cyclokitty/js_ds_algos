@@ -18,11 +18,11 @@ function fib(n, fibo = [0, 1], counter = 0) {
 }
 
 // Stephen's recursion version
-function fib(n) {
-    if (n < 2) return n;
+// function fib(n) {
+//     if (n < 2) return n;
 
-    return fib(n - 1) + fib(n - 2);
-}
+//     return fib(n - 1) + fib(n - 2);
+// }
 
 // my iterative solution
 // function fib(n) {

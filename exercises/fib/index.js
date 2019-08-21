@@ -8,14 +8,23 @@
 // Example:
 //   fib(4) === 3
 
-// my iterative solution
-function fib(n) {
-    let fibo = [0, 1];
-    
-    for (let i = 0; i <= n; i++) {
-        fibo.push(fibo[i] + fibo[i + 1]);
-    }
+// my recursion version 
+function fib(n, fibo = [0, 1], counter = 0) {
+    if (n === 0) return;
+    fibo.push(fibo[counter] + fibo[counter + 1]);
+    counter++;
+    fib(n - 1, fibo, counter); 
     return fibo[n];
-}
+  }
+
+// my iterative solution
+// function fib(n) {
+//     let fibo = [0, 1];
+    
+//     for (let i = 0; i <= n; i++) {
+//         fibo.push(fibo[i] + fibo[i + 1]);
+//     }
+//     return fibo[n];
+// }
 
 module.exports = fib;
